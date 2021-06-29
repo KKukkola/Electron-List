@@ -1,5 +1,6 @@
 // Project thing under an hour or so
 // Introduction to some electron development and what you can do
+// Followed this tutorial: https://www.youtube.com/watch?v=kN1Czs0m1SU
 
 // Did a few things,
 //  Multiple windows
