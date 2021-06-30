@@ -23,3 +23,12 @@ nav .brand-logo {
         line-height: 30px;
     }
 }
+
+img .nav-img-btn {
+    height: auto;
+    width: auto;
+}
+
+.title-bar {
+     -webkit-app-region: drag;
+}
