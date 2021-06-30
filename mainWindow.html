@@ -5,19 +5,26 @@
     <!-- metadata stuff -->
     <title>ListTestApp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a class="brand-logo center">shopping list</a>
+    <nav height="10">
+        <div class="nav-wrapper" height="10">
+            <a href="#" class="brand-logo left">ListTest</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="#">Minimize</a></li>
+                <li><a href="#">Close</a></li>
+            </ul>
         </div>
     </nav>
-    <ul></ul>
+    
+    <ul id="ul-item-list"></ul>
     
     <script>
         const electron = require('electron');
-        const {ipcRenderer} = electron;
-        const ul = document.querySelector('ul');
+        const {ipcRenderer} = electron; 
+        const ul = document.getElementById('ul-item-list');
+        
 
         ipcRenderer.on('item:add', function(e, item){
             ul.className = 'collection';

@@ -22,7 +22,7 @@ const { cwd } = require('process');
 const {app, BrowserWindow, Menu, ipcMain} = electron;
 
 // SET ENV
-process.env.NODE_ENV = 'production';
+// process.env.NODE_ENV = 'production';
 
 let mainWindow;
 let addWindow;
@@ -31,6 +31,7 @@ let addWindow;
 app.on('ready', function(){
     // Create new window
     mainWindow = new BrowserWindow({
+        frame:false,
         webPreferences:{
             nodeIntegration:true,
             contextIsolation: false,
