@@ -24,9 +24,11 @@ nav .brand-logo {
     }
 }
 
-img .nav-img-btn {
-    height: auto;
-    width: auto;
+.nav-img-btn {
+    height: 24px;
+    width: 24px;
+    margin-top: 0px;
+    margin-right: 10px;
 }
 
 .title-bar {
