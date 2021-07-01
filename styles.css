@@ -1,36 +1,55 @@
-nav {
-    height: 30px;
-    line-height: 30px;
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 }
 
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
-    height: 30px;
-    line-height: 30px;
+#title-bar {
+    height: 25px;
+    width: 100%;
+    background-color: rgb(51, 87, 81);
+    display: flex;
+    align-items: center;
 }
 
-nav .button-collapse i {
-    height: 30px;
-    line-height: 30px;
+#title-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-left: 5px;
+    -webkit-app-region: drag;
+    flex-grow: 1;
 }
 
-nav .brand-logo { 
-    font-size: 1.6rem; 
+#min-div {
+    width: 36px;
+    height: 25px;
+    background-color: transparent;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-@media only screen and (min-width: 601px){
-    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-        height: 30px;
-        line-height: 30px;
-    }
+#min-div:hover {
+    background-color: rgba(255, 255, 255, 0.308);
 }
 
-.nav-img-btn {
-    height: 24px;
-    width: 24px;
-    margin-top: 0px;
-    margin-right: 10px;
+#x-div {
+    width: 36px;
+    height: 25px;
+    background-color: transparent;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-.title-bar {
-     -webkit-app-region: drag;
+#x-div:hover {
+    background-color: rgb(255, 95, 95);
+}
+
+.img-centered {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 12px;
+    height: 12px;
 }
