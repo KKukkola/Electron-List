@@ -15,17 +15,14 @@
             
             <ul class="right">
                 <li>
-                    <div id="min-div">
+                    <div id="min-div" onclick="minimizeWindow">
                         <img class="img-centered" src="assets/icons/svg/minimize-w.svg" alt="">
                     </div>
-                    <div id="x-div">
+                    <div id="x-div" onclick="closeWindow">
                         <img class="img-centered" src="assets/icons/svg/close-w.svg" alt="">
                     </div>
                 <li>
-                    <!--
-                <li><img class="nav-img-btn" src="assets/icons/svg/minimize-w.svg" alt=""></li>
-                <li><img class="nav-img-btn" src="assets/icons/svg/close-w.svg" alt=""></li>
-            --></ul>
+            </ul>
         </div>
     </nav>
     
@@ -35,7 +32,6 @@
         const electron = require('electron');
         const {ipcRenderer} = electron; 
         const ul = document.getElementById('ul-item-list');
-        
 
         ipcRenderer.on('item:add', function(e, item){
             ul.className = 'collection';
@@ -60,6 +56,21 @@
             if (ul.children.length == 0){
                 ul.className = '';
             }
+        }
+
+        document.getElementById('x-div').onclick = closeWindow;
+        document.getElementById('min-div').onclick = minimizeWindow;
+        
+        // Close window
+        function closeWindow(e){
+            console.log('b');
+            ipcRenderer.send('app:close');
+        }
+
+        // Minimize window
+        function minimizeWindow(e){
+            console.log('c');
+            ipcRenderer.send('app:minimize');
         }
     </script>
 </body>

@@ -89,6 +89,16 @@ ipcMain.on('item:add', function(e, item){
     addWindow.close();
 });
 
+// Catch app:close
+ipcMain.on('app:close', (event, arg) => {
+    app.quit();
+})
+
+// Catch app:minimize
+ipcMain.on('app:minimize', (event, arg) => {
+    mainWindow.minimize();
+})
+
 // Create menu template
 // In Electron, menu is just an array
 const mainMenuTemplate = [
