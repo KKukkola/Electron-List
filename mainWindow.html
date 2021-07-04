@@ -35,10 +35,14 @@
 
         ipcRenderer.on('item:add', function(e, item){
             ul.className = 'collection';
+            
             //DOM manip
             const li = document.createElement('li'); // create li
-            li.className = 'collection-item';
             const itemText = document.createTextNode(item); // create text node
+            li.className = 'bottom-most';
+            if (ul.children.length > 0) {
+                ul.lastElementChild.className = 'middle-most';
+            }
             li.appendChild(itemText); // add text to li
             ul.appendChild(li);
         });
@@ -53,9 +57,12 @@
 
         function removeItem(e){
             e.target.remove(); // and ui in ul we gona remove
-            if (ul.children.length == 0){
-                ul.className = '';
+            if (ul.lastElementChild) {
+                ul.lastElementChild.className = 'bottom-most';
             }
+            //if (ul.children.length == 0){
+            //    ul.className = '';
+            //}
         }
 
         document.getElementById('x-div').onclick = closeWindow;

@@ -5,10 +5,19 @@ ul {
     padding: 0px;
 }
 
+li.middle-most {
+    margin: 5px 5px 5px 5px;
+    border-bottom: 1px solid rgb(44, 44, 56);
+}
+
+li.bottom-most {
+    margin: 5px 5px 5px 5px
+}
+
 #title-bar {
     height: 25px;
     width: 100%;
-    background-color: rgb(51, 87, 81);
+    background-color: rgb(86, 214, 118);
     display: flex;
     align-items: center;
 }
