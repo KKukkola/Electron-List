@@ -35,15 +35,18 @@
 
         ipcRenderer.on('item:add', function(e, item){
             ul.className = 'collection';
-            
             //DOM manip
             const li = document.createElement('li'); // create li
+            const div = document.createElement('div');
             const itemText = document.createTextNode(item); // create text node
+            
             li.className = 'bottom-most';
+            div.className = 'list-item';
             if (ul.children.length > 0) {
                 ul.lastElementChild.className = 'middle-most';
             }
-            li.appendChild(itemText); // add text to li
+            div.appendChild(itemText);
+            li.appendChild(div); // add text to li
             ul.appendChild(li);
         });
 
@@ -56,7 +59,10 @@
         ul.addEventListener('dblclick', removeItem);
 
         function removeItem(e){
-            e.target.remove(); // and ui in ul we gona remove
+            //if (e.target.tagName == 'li') {
+            //    e.target.remove();
+            //}
+            e.target.parentElement.remove(); // and ui in ul we gona remove
             if (ul.lastElementChild) {
                 ul.lastElementChild.className = 'bottom-most';
             }
@@ -70,13 +76,11 @@
         
         // Close window
         function closeWindow(e){
-            console.log('b');
             ipcRenderer.send('app:close');
         }
 
         // Minimize window
         function minimizeWindow(e){
-            console.log('c');
             ipcRenderer.send('app:minimize');
         }
     </script>
